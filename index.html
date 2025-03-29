@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Princess</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffebee 100%);
+            font-family: 'Poppins', sans-serif;
+            color: #5d4037;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .header {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #c62828;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #8d6e63;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #ffcdd2;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #c62828, #e91e63);
+        }
+        
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: left;
+            color: #5d4037;
+        }
+        
+        .urdu {
+            direction: rtl;
+            font-family: 'Noto Nastaliq Urdu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.3rem;
+            color: #4e342e;
+            margin: 25px 0;
+            line-height: 2;
+        }
+        
+        .decoration {
+            position: absolute;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .moon {
+            top: 50px;
+            right: 50px;
+            font-size: 8rem;
+            color: #ff9800;
+        }
+        
+        .stars {
+            bottom: 20px;
+            left: 30px;
+            font-size: 5rem;
+            color: #e91e63;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            color: #8d6e63;
+            font-size: 0.9rem;
+        }
+        
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #c62828;
+            margin-top: 20px;
+        }
+        
+        .eid-lantern {
+            width: 100px;
+            margin: 20px auto;
+            animation: swing 3s infinite alternate;
+            color: #ff9800;
+        }
+        
+        @keyframes swing {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+        
+        .petals {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .petal {
+            position: absolute;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23e91e63"><path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M15.5,8C16.3,8 17,8.7 17,9.5C17,10.3 16.3,11 15.5,11C14.7,11 14,10.3 14,9.5C14,8.7 14.7,8 15.5,8M8.5,8C9.3,8 10,8.7 10,9.5C10,10.3 9.3,11 8.5,11C7.7,11 7,10.3 7,9.5C7,8.7 7.7,8 8.5,8M12,11C13.1,11 14,11.9 14,13C14,14.1 13.1,15 12,15C10.9,15 10,14.1 10,13C10,11.9 10.9,11 12,11M19,17V19H5V17C5,14.8 8.1,13 12,13C15.9,13 19,14.8 19,17Z" /></svg>');
+            background-size: contain;
+            opacity: 0.6;
+            animation: falling linear infinite;
+        }
+        
+        @keyframes falling {
+            0% { transform: translate(0, -10vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.6; }
+            100% { transform: translate(calc(var(--random-x) * 100vw), 100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="petals" id="petals"></div>
+    
+    <div class="container">
+        <div class="decoration moon">&#127769;</div>
+        <div class="decoration stars">&#10024;</div>
+        
+        <div class="header">
+            <h1>Eid Mubarak Meri Jan<br>Areeba Mahnoor ♥</h1>
+            <div class="subtitle">A Special Eid Greeting For My Princess</div>
+            
+            <div class="eid-lantern">♥</div>
+        </div>
+        
+        <div class="card">
+            <div class="message">
+                Wishing you and your family a blessed<br>
+                Eid-ul-Fitr filled with love, peace, and happiness ♥
+            </div>
+            
+            <div class="message">
+                Eid Mubarak! On this auspicious day, may Allah's blessings fill your life with love, peace, and prosperity ♥
+            </div>
+            
+            <div class="message">
+                Ya Allah take care of my shehzadi. I want to see her at the top of success in every field of life Ameen ♥
+            </div>
+            
+            <div class="message">
+                Stay loyal with me I will <em>Qurban</em> my everything on you ♥<br>
+                I'm always yours ♥
+            </div>
+            
+            <div class="urdu">
+                ایک تم سے گفتگو ہو ! دنیا کی چاہتوں سے مطلب نہیں ♥
+            </div>
+            
+            <div class="message">
+                Hamesha khush rahy Meri princess<br>
+                I love you so much ♥
+            </div>
+        </div>
+        
+        <div class="footer">
+            May this Eid bring endless joy to your life<br>
+            <div class="signature">Forever Yours ♥</div>
+        </div>
+    </div>
+
+    <script>
+        // Create falling petals effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const petalsContainer = document.getElementById('petals');
+            const petalCount = 20;
+            
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                
+                // Random properties for each petal
+                const size = Math.random() * 20 + 10;
+                const duration = Math.random() * 10 + 5;
+                const delay = Math.random() * 5;
+                const randomX = Math.random();
+                
+                petal.style.width = ${size}px;
+                petal.style.height = ${size}px;
+                petal.style.left = ${Math.random() * 100}%;
+                petal.style.animationDuration = ${duration}s;
+                petal.style.animationDelay = ${delay}s;
+                petal.style.setProperty('--random-x', randomX);
+                
+                petalsContainer.appendChild(petal);
+            }
+        });
+    </script>
+</body>
+</html>
